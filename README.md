@@ -1,8 +1,8 @@
 # makerbadge_kuba1
 Jednoduchá aplikace pro Maker Badge (https://www.makermarket.cz/maker-badge/) revize D.
 
-Střídá po 180 sec (nebo dotyku na prostřední plošku) tři bitmapy (page1 až page3 v bitmap.h). 
-Čtvrtou (page0) zobrazuje po stisku BOOT - ta je myšlená jako úvodní k vypnutému zařízení. 
+Střídá po 180 sec (nebo dotyku na prostřední plošku) pět bitmap (page1 až page5 v bitmap.h). 
+Šestou (page0) zobrazuje po stisku BOOT - ta je myšlená jako úvodní k vypnutému zařízení. 
 
 Pokud střídá bitmapy po uplynutí času (ne dotykem), tak před tím zabliká ledkami, aby na sebe upozornila.
 

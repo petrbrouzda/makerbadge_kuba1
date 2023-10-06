@@ -16,6 +16,7 @@ usb-cdc enabled
 
 #define ENABLE_GxEPD2_GFX 0 // we won't need the GFX base class
 #include <GxEPD2_BW.h>
+
 // Online tool for converting images to byte arrays:
 // https://javl.github.io/image2cpp/
 
@@ -194,19 +195,17 @@ void setup() {
     digitalWrite( ledPower, HIGH );
   }
 
-  
-  if( activePage==0 ) {
-    drawBitmaps(page0, false);
-  } else if( activePage==1 ) {
-    drawBitmaps(page1, true);
-  } else if( activePage==2 ) {
-    drawBitmaps(page2, true);
-  } else if( activePage==3 ) {
-    drawBitmaps(page3, true );
+  switch( activePage ) {
+    case 0: default: drawBitmaps(page0, false); break;
+    case 1: drawBitmaps(page1, true); break;
+    case 2: drawBitmaps(page2, true); break;
+    case 3: drawBitmaps(page3, true); break;
+    case 4: drawBitmaps(page4, true); break;
+    case 5: drawBitmaps(page5, true); break;
   }
 
   activePage++;
-  if( activePage>3 ) activePage=1;
+  if( activePage>5 ) activePage=1;
 
 
   // ---- nastaveni dalsiho probuzeni
@@ -259,6 +258,7 @@ void napisASpi() {
 }
 
 
+// z examplu pro Adafruit Neopixel
 // Rainbow-enhanced theater marquee. Pass delay time (in ms) between frames.
 void theaterChaseRainbow(int wait) {
   int firstPixelHue = 0;     // First pixel starts at red (hue 0)
@@ -282,7 +282,6 @@ void theaterChaseRainbow(int wait) {
 }
 
 
-//This is function from GxEPD library example
 void drawBitmaps(const unsigned char *bitmap, bool displayAccu  ) {
   digitalWrite( PWR, LOW);
   display.init(115200);
@@ -307,8 +306,7 @@ void drawBitmaps(const unsigned char *bitmap, bool displayAccu  ) {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  // sem se nikdy nedostaneme
 }
 
 /*
