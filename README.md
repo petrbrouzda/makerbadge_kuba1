@@ -10,3 +10,7 @@ Měří a do levého dolního rohu displeje vypisuje napětí baterky a procentu
 Při příliš malém napětí vypíše na displej upozornění a uspí se na dlouho, aby nedošlo ke zničení baterky (ale ta má stejně ochranný obvod, takže by to mělo být OK v každém případě).
 
 Bitmapy jsou v adresáři imgs/ a konverze do zdrojáku se provádí nástrojem https://javl.github.io/image2cpp/
+Proti reálnému zobrazení na displeji je třeba je kreslit inverzně; ukládat jako 1-bit PNG a otočené 90° doprava.
+Rozlišení bitmap je stejné jako rozlišení displeje, 128x250.
+
+Pokud by bylo požadované vypisovat text (ne jen obrázek) s diakritikou, postupuj podle návodu zde: https://github.com/petrbrouzda/fontconvert8-iso8859-2
