@@ -35,3 +35,15 @@ Nastavení desky:
 * usb-cdc on boot: enabled
 
 tedy FQBN: esp32:esp32:esp32s2:CDCOnBoot=cdc,CPUFreq=80,FlashFreq=40
+
+Pro programování desky je třeba jí přepnout do programovacího režimu: stisknout a držet BOOT (vlevo), kliknout na RESET (vpravo) a pak teprve pustit BOOT. 
+Po skončení programování vypíše Arduino IDE chybu, že nemůže desku v tomto režimu samo zresetovat, takže je potřeba ručně zmáčknout RESET.
+
+Pokud chceš používat debug výpisy na sériový port, odkomentuj
+
+`// #define LOGUJ_DEBUG`
+
+a tím zajistíš, že to při startu bude 2 sekundy čekat, a sériový port se stihne napojit. Pro normální provoz lépe zakomentovat, aby to nemělo pomalé reakce.
+
+Na Windows nemá "staré" Arduino 1.8.x sériový port ESP32-S2 rádo; doporučuju používat Arduino IDE 2.0.x.
+
